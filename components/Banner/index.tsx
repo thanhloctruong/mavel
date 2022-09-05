@@ -8,13 +8,13 @@ function index() {
       useEffect(() => {
             const element = ref.current;
             gsap.fromTo(
-                  element, { x: 10, y: 0 }, {
+                  element, { x: 100, y: -37 }, {
                   x: -100, y: 50, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 50%",
                         end: "bottom 30%",
                         scrub: true,
-                        toggleActions: 'play  none none reverse'
+                        toggleActions: 'play  none none reverse',
                   }
             });
       }, []);

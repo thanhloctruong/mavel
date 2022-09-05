@@ -19,7 +19,7 @@ function index({ tabList, tabList2 }: any) {
       useEffect(() => {
             const element = ref1.current;
             gsap.fromTo(
-                  element, { x: 0, y: 0, scaleX: 0.7, scaleY: 0.7 }, {
+                  element, { x: 8, y: -52, scaleX: 0.7, scaleY: 0.7 }, {
                   x: -100, y: 50, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
@@ -33,7 +33,7 @@ function index({ tabList, tabList2 }: any) {
       useEffect(() => {
             const element = ref2.current;
             gsap.fromTo(
-                  element, { x: 20, y: -10, scaleX: 0.7, scaleY: 0.7 }, {
+                  element, { x: 12, y: -47, scaleX: 0.7, scaleY: 0.7 }, {
                   x: -70, y: 90, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
@@ -47,7 +47,7 @@ function index({ tabList, tabList2 }: any) {
       useEffect(() => {
             const element = ref3.current;
             gsap.fromTo(
-                  element, { x: 0, y: -50, scaleX: 0.7, scaleY: 0.7 }, {
+                  element, { x: -5, y: -90, scaleX: 0.7, scaleY: 0.7 }, {
                   x: 0, y: 100, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
@@ -61,7 +61,7 @@ function index({ tabList, tabList2 }: any) {
       useEffect(() => {
             const element = ref4.current;
             gsap.fromTo(
-                  element, { x: -30, y: -30, scaleX: 0.7, scaleY: 0.7 }, {
+                  element, { x: -11, y: -46, scaleX: 0.7, scaleY: 0.7 }, {
                   x: 60, y: 80, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
@@ -75,7 +75,7 @@ function index({ tabList, tabList2 }: any) {
       useEffect(() => {
             const element = ref5.current;
             gsap.fromTo(
-                  element, { x: -30, y: -20, scaleX: 0.7, scaleY: 0.7 }, {
+                  element, { x: -5, y: -60, scaleX: 0.7, scaleY: 0.7 }, {
                   x: 70, y: 40, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
