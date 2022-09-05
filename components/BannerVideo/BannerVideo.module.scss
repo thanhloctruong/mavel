@@ -1,0 +1,37 @@
+.container {
+      position: relative;
+      min-height: 651px;
+      background-image: url(../../public/assets/images/bg2.jpg);
+      text-align: center;
+      padding: 40px 36px;
+}
+.video_container {
+      position: relative;
+      background-image: url(../../public/assets/images/video-border.png);
+      background-repeat: no-repeat;
+      background-position: 0% 0%;
+      background-size: 100% 100%;
+      display: inline-block;
+      margin-bottom: 3.3vh;
+      padding: 35px 25px 35px 25px;
+      margin-top: 1.5rem;
+      z-index: 5;
+}
+.video {
+      display: flex;
+      align-items: center;
+      height: 46vh;
+      width: auto;
+}
+.img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+}
+.hide {
+      display: none;
+}
+.show {
+      display: block;
+}

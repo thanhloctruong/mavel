@@ -1,0 +1,86 @@
+.container {
+      background-image: url("../../public/assets/images/bg1.jpg");
+      min-height: calc(100vh - 89px);
+      width: 100%;
+      background-repeat: no-repeat;
+      position: relative;
+      text-align: center;
+      background-size: cover;
+      background-position: right;
+}
+.title {
+      position: relative;
+      top: 197px;
+      z-index: 5;
+}
+.content {
+      position: relative;
+}
+
+.black_car {
+      position: relative;
+      bottom: -300px;
+      left: -50px;
+      animation: engine 0.3s infinite;
+}
+.green_car {
+      position: relative;
+      right: -50px;
+      bottom: -50px;
+      animation: engineGreen 0.3s infinite;
+}
+.footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      &::before {
+            content: "";
+            position: absolute;
+            min-width: 20px;
+            min-height: 20px;
+            background-image: url(../../public/assets/images/scrollDown.png);
+            animation: scrollDown 0.4s infinite;
+      }
+      &::after {
+            content: "";
+            position: absolute;
+            min-width: 20px;
+            min-height: 20px;
+            background-image: url(../../public/assets/images/scrollDown.png);
+            animation: scrollDown 0.4s infinite;
+      }
+      &_img {
+            margin: 0 10px 0 30px;
+      }
+}
+
+@keyframes scrollDown {
+      from {
+            top: -8px;
+      }
+      to {
+            top: 8px;
+      }
+}
+@keyframes engine {
+      0%,
+      50%,
+      100% {
+            bottom: -298px;
+      }
+      25%,
+      75% {
+            bottom: -300px;
+      }
+}
+@keyframes engineGreen {
+      0%,
+      50%,
+      100% {
+            bottom: -48px;
+      }
+      25%,
+      75% {
+            bottom: -51px;
+      }
+}

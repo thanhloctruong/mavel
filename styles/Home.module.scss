@@ -1,0 +1,15 @@
+.header {
+      max-height: 89px;
+      background-image: url("../public/assets/images/headerBg.png");
+      &_logo {
+            text-align: center;
+            margin: auto;
+            &_img {
+                  max-height: 89px;
+            }
+      }
+}
+.wrapper {
+      max-width: 1200px;
+      margin: auto;
+}

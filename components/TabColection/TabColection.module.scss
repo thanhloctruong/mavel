@@ -1,0 +1,119 @@
+.container {
+      position: relative;
+      background-image: url(../../public/assets/images/bg5Full.jpg);
+      text-align: center;
+      background-repeat: no-repeat;
+      padding-bottom: 50px;
+}
+.image_container {
+      position: relative;
+}
+.car {
+      position: absolute;
+      &_1 {
+            top: 16%;
+            left: 18%;
+      }
+      &_2 {
+            top: 19%;
+            left: 25%;
+            z-index: 1;
+      }
+      &_3 {
+            top: 22%;
+            left: 40%;
+            z-index: 3;
+      }
+      &_4 {
+            top: 19%;
+            right: 25%;
+            z-index: 1;
+      }
+      &_5 {
+            top: 17%;
+            right: 21%;
+      }
+}
+.title {
+      margin-top: 10rem;
+}
+.tap {
+      margin: 0 10px 0 30px;
+      padding: 0 83px;
+}
+
+.tap_container {
+      position: relative;
+      width: 100%;
+
+      &::before {
+            content: "";
+            position: absolute;
+            min-width: 20px;
+            min-height: 20px;
+            background-image: url(../../public/assets/images/scrollDown.png);
+            animation: scrollDown 1s infinite;
+      }
+      &::after {
+            content: "";
+            position: absolute;
+            min-width: 20px;
+            min-height: 20px;
+            background-image: url(../../public/assets/images/scrollDown.png);
+            animation: scrollDown 1s infinite;
+      }
+}
+@keyframes scrollDown {
+      from {
+            top: -8px;
+      }
+      to {
+            top: 8px;
+      }
+}
+.tab {
+      width: 100%;
+      text-align: center;
+      align-items: center;
+      &_container {
+            margin-top: 2rem;
+            padding: 0 83px;
+      }
+      &_title {
+            margin-top: 2rem;
+      }
+      &_content {
+            padding: 15px 30px;
+      }
+}
+.text {
+      color: #fff;
+      font-size: 24px;
+}
+.venom {
+      opacity: 0.5;
+      background-image: url("../../public/assets/images/img_left.png") !important;
+      min-height: 50px;
+      background-position: center;
+}
+.origin {
+      opacity: 0.5;
+      background-image: url("../../public/assets/images/img_right.png") !important;
+      min-height: 50px;
+      background-position: center;
+}
+.link {
+      border-top-left-radius: 12px !important;
+      border-top-right-radius: 12px !important;
+      border-bottom-left-radius: 0 !important ;
+      border-bottom-right-radius: 0 !important;
+}
+.first {
+      border: 3px solid #f9486b;
+}
+.second {
+      border: 3px solid #44ffff;
+}
+.card {
+      background-color: transparent !important;
+}

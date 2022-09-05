@@ -1,0 +1,27 @@
+.container {
+      position: relative;
+      min-height: 451px;
+      background-image: url(../../public/assets/images/bg7.jpg);
+      text-align: center;
+      padding: 40px 36px;
+}
+.images {
+      display: block;
+      margin: auto;
+      margin-bottom: 20px;
+}
+.btnImage {
+      animation: scale 2s infinite;
+}
+@keyframes scale {
+      0%,
+      100% {
+            transform: scale(0.8);
+            -webkit-transform: scale(0.8);
+      }
+
+      50% {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+      }
+}
