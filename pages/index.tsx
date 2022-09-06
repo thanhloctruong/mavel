@@ -1,4 +1,5 @@
 
+import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import Banner from '../components/Banner'
 import BannerVideo from '../components/BannerVideo'
@@ -16,31 +17,33 @@ const Home = () => {
       return (<>
             <div className={`${styles.header}`}>
                   <div className={`${styles.header_logo}`}>
-                        <img
+                        <Image
                               className={`${styles.header_logo_img}`}
                               src='/assets/images/logo.png'
                               alt='logo'
+                              width={300}
+                              height={89}
                         />
                   </div>
             </div>
             <div className={`${styles.wrapper}`}>
                   <Banner />
-                  <img src='/assets/images/border.jpg' />
+                  <Image width={1200} height={60} src='/assets/images/border.jpg' />
                   <BannerVideo />
-                  <img src='/assets/images/border.jpg' />
+                  <Image width={1200} height={60} src='/assets/images/border.jpg' />
                   <BannerSlide SliderData={SliderData} />
-                  <img src='/assets/images/border.jpg' />
+                  <Image width={1200} height={60} src='/assets/images/border.jpg' />
                   <BannerPopup />
-                  <img src='/assets/images/border.jpg' />
+                  <Image width={1200} height={60} src='/assets/images/border.jpg' />
                   <BannerColection tabList={TabItems} tabList2={TabItemsTwo} />
-                  <img src='/assets/images/boder2.jpg' />
+                  <Image width={1200} height={60} src='/assets/images/boder2.jpg' />
                   <Colection tabList={TwoCollect} tabList2={TwoCollect} />
-                  <img src='/assets/images/border.jpg' />
+                  <Image width={1200} height={60} src='/assets/images/border.jpg' />
                   <BannerPdf />
-                  <img src='/assets/images/border.jpg' />
+                  <Image width={1200} height={60} src='/assets/images/border.jpg' />
                   <BannerLast />
                   <Footer />
-                  <img src='/assets/images/border.jpg' />
+                  <Image width={1200} height={60} src='/assets/images/border.jpg' />
             </div>
       </>
       )

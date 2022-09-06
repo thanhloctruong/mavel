@@ -9,21 +9,17 @@
       position: relative;
       background-image: url(../../public/assets/images/bg3border.png);
       background-repeat: no-repeat;
-      background-position: 0% 0%;
-      background-size: 100% 100%;
+      background-position: 50% 0%;
+      background-size: 74% 100%;
       display: block;
       padding: 35px 25px 35px 25px;
-      top: 45%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      position: absolute;
 }
 .video {
       display: flex;
       align-items: center;
       height: 46vh;
       width: auto;
-      // position: absolute;
+      margin: auto;
 }
 .img {
       position: absolute;
@@ -59,6 +55,12 @@
             text-align: center;
             width: fit-content;
             cursor: pointer;
+            margin: auto;
+      }
+      &_contents {
+            position: relative;
+            width: 90%;
+            margin: auto;
       }
 }
 .arrow {

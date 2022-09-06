@@ -5,23 +5,15 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Tab, Col, Row, Nav, Card } from 'react-bootstrap';
 import ModalColection from '../Modal'
 gsap.registerPlugin(ScrollTrigger);
-
-
-function index({ tabList, tabList2 }) {
+function Index({ tabList, tabList2 }: any) {
       const [modalShow, setModalShow] = useState < boolean > (false)
       const [tempData, setTempData] = useState < any > ([])
-
-      const ref1 = useRef(null);
-      const ref2 = useRef(null);
-      const ref3 = useRef(null);
-      const ref4 = useRef(null);
-      const ref5 = useRef(null);
-
+      const Ref2 = useRef(null);
       useEffect(() => {
-            const element = ref2.current;
+            const element = Ref2.current;
             gsap.fromTo(
                   element, { x: 20, y: -10, scaleX: 0.7, scaleY: 0.7 }, {
-                  x: -70, y: 90, scaleX: 1, scaleY: 1, duration: 2,
+                  x: -54, y: 67, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
                         end: "bottom 30%",
@@ -31,6 +23,8 @@ function index({ tabList, tabList2 }) {
                   }
             });
       }, []);
+      const ref3 = useRef(null);
+
       useEffect(() => {
             const element = ref3.current;
             gsap.fromTo(
@@ -45,11 +39,14 @@ function index({ tabList, tabList2 }) {
                   }
             });
       }, []);
+      const ref4 = useRef(null);
+
+
       useEffect(() => {
             const element = ref4.current;
             gsap.fromTo(
                   element, { x: -30, y: -30, scaleX: 0.7, scaleY: 0.7 }, {
-                  x: 60, y: 80, scaleX: 1, scaleY: 1, duration: 2,
+                  x: 28, y: 33, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
                         end: "bottom 30%",
@@ -59,16 +56,16 @@ function index({ tabList, tabList2 }) {
                   }
             });
       }, []);
-      const handlePopup = (imgSrc, src) => {
+      const handlePopup = (imgSrc: string, src: string) => {
             let temp = [imgSrc, src];
-            setTempData((item) => [1, ...temp])
+            setTempData((item: any) => [1, ...temp])
             return setModalShow(true)
       }
       return <>
             <div className={`${styles.container}`}>
                   <img src="/assets/images/bg6.png" />
                   <div className={`${styles.images_container}`}>
-                        <img src="/assets/images/car6_1.png" className={`${styles.car_2} ${styles.car}`} ref={ref2} />
+                        <img src="/assets/images/car6_1.png" className={`${styles.car_2} ${styles.car}`} ref={Ref2} />
                         <img src="/assets/images/car6_2.png" className={`${styles.car_3} ${styles.car}`} ref={ref3} />
                         <img src="/assets/images/car6_3.png" className={`${styles.car_4} ${styles.car}`} ref={ref4} />
                   </div>
@@ -101,7 +98,7 @@ function index({ tabList, tabList2 }) {
                                                 <div className={`${styles.tab_content}`}>
                                                       <Row>
                                                             {
-                                                                  tabList && tabList.map((item, index) => {
+                                                                  tabList && tabList.map((item: any, index: number) => {
                                                                         return (
                                                                               <Col md={4} key={index}>
                                                                                     <Card className={`${styles.card}`} onClick={() => handlePopup(item.imgUrl, item.src)}
@@ -121,7 +118,7 @@ function index({ tabList, tabList2 }) {
                                                 <div className={`${styles.tab_content}`}>
                                                       <Row>
                                                             {
-                                                                  tabList2 && tabList2.map((item, index) => {
+                                                                  tabList2 && tabList2.map((item: any, index: number) => {
                                                                         return (
                                                                               <Col md={4} key={index}>
                                                                                     <Card className={`${styles.card}`} onClick={() => handlePopup(item.imgUrl, item.src)}
@@ -149,4 +146,4 @@ function index({ tabList, tabList2 }) {
       </>;
 }
 
-export default index;
+export default Index

@@ -1,7 +1,9 @@
 .header {
-      max-height: 89px;
       background-image: url("../public/assets/images/headerBg.png");
       &_logo {
+            max-height: 89px;
+            height: 89px;
+            width: 100%;
             text-align: center;
             margin: auto;
             &_img {

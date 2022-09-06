@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Modal.module.scss'
 
-function index(props) {
+function Index(props: any) {
       let modelStyle = {
             display: 'block',
       }
@@ -17,4 +17,4 @@ function index(props) {
       )
 }
 
-export default index
+export default Index

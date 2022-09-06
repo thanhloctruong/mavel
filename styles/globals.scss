@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
+@import "~slick-carousel/slick/slick.css";
 html,
 body {
       padding: 0;
@@ -29,4 +30,7 @@ a {
 .col-md-2 {
       width: 20% !important;
       margin: 5px 0;
+}
+.slick-slider {
+      display: flex !important;
 }

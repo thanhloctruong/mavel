@@ -11,22 +11,28 @@
 .title {
       position: relative;
       top: 197px;
+      height: 112px;
+      width: 600px;
+      margin: auto;
       z-index: 5;
 }
 .content {
       position: relative;
 }
+.car {
+      display: inline-block;
+}
 
 .black_car {
       position: relative;
-      bottom: -300px;
-      left: -50px;
+      bottom: -257px;
+      left: -18px;
       animation: engine 0.3s infinite;
 }
 .green_car {
       position: relative;
-      right: -50px;
-      bottom: -50px;
+      right: -136px;
+      bottom: -83px;
       animation: engineGreen 0.3s infinite;
 }
 .footer {
@@ -38,6 +44,8 @@
             position: absolute;
             min-width: 20px;
             min-height: 20px;
+            left: 36%;
+
             background-image: url(../../public/assets/images/scrollDown.png);
             animation: scrollDown 0.4s infinite;
       }
@@ -45,6 +53,7 @@
             content: "";
             position: absolute;
             min-width: 20px;
+            left: 62%;
             min-height: 20px;
             background-image: url(../../public/assets/images/scrollDown.png);
             animation: scrollDown 0.4s infinite;
@@ -66,21 +75,21 @@
       0%,
       50%,
       100% {
-            bottom: -298px;
+            bottom: -255px;
       }
       25%,
       75% {
-            bottom: -300px;
+            bottom: -257px;
       }
 }
 @keyframes engineGreen {
       0%,
       50%,
       100% {
-            bottom: -48px;
+            bottom: -134px;
       }
       25%,
       75% {
-            bottom: -51px;
+            bottom: -136px;
       }
 }

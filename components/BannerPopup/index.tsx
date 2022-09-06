@@ -2,15 +2,15 @@ import React, { useRef, useEffect, useState } from "react";
 
 import styles from './BannerPopup.module.scss'
 
-function index() {
-      const myref = useRef(null)
+function Index() {
+      const myref = useRef < any > (null)
 
       const [hide, setHide] = useState < boolean > (false)
 
 
       if (typeof window !== "undefined") {
             const a = myref.current
-            window.onclick = (e: any) => {
+            window.onclick = (e) => {
                   if (e?.target == myref.current) {
                         myref.current.style.display = 'none';
                         setHide(false)
@@ -45,4 +45,4 @@ function index() {
       </>;
 }
 
-export default index;
+export default Index;

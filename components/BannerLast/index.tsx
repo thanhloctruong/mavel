@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './BannerLast.module.scss'
 import { Col, Row } from 'react-bootstrap';
 
-function index() {
+function Index() {
       const datas = [
             { url: '/assets/images/f1.png' },
             { url: '/assets/images/f2.png' },
@@ -30,4 +30,4 @@ function index() {
       )
 }
 
-export default index
+export default Index

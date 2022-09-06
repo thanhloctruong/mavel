@@ -10,23 +10,19 @@
 }
 .car {
       position: absolute;
-      &_1 {
-            top: 16%;
-            left: 18%;
-      }
       &_2 {
-            top: 19%;
-            left: 25%;
+            top: 16%;
+            left: 30%;
             z-index: 1;
       }
       &_3 {
-            top: 22%;
+            top: 19%;
             left: 40%;
             z-index: 3;
       }
       &_4 {
-            top: 19%;
-            right: 25%;
+            top: 18%;
+            right: 30%;
             z-index: 1;
       }
       &_5 {

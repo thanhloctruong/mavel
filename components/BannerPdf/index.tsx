@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Bannerpdf.module.scss'
 
-function index() {
+function Index() {
       return (
             <div className={`${styles.container}`}>
                   <img src="/assets/images/content7.png" className={`${styles.images}`} alt="" />
@@ -17,4 +17,4 @@ function index() {
       )
 }
 
-export default index
+export default Index

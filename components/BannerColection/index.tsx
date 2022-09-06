@@ -7,20 +7,16 @@ import ModalColection from '../Modal'
 gsap.registerPlugin(ScrollTrigger);
 
 
-function index({ tabList, tabList2 }: any) {
+function Index({ tabList, tabList2 }: any) {
       const [modalShow, setModalShow] = useState < boolean > (false)
       const [tempData, setTempData] = useState < any > ([])
 
       const ref1 = useRef(null);
-      const ref2 = useRef(null);
-      const ref3 = useRef(null);
-      const ref4 = useRef(null);
-      const ref5 = useRef(null);
       useEffect(() => {
             const element = ref1.current;
             gsap.fromTo(
                   element, { x: 8, y: -52, scaleX: 0.7, scaleY: 0.7 }, {
-                  x: -100, y: 50, scaleX: 1, scaleY: 1, duration: 2,
+                  x: -117, y: 11, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
                         end: "bottom 30%",
@@ -30,11 +26,13 @@ function index({ tabList, tabList2 }: any) {
                   }
             });
       }, []);
+      const ref2 = useRef(null);
+
       useEffect(() => {
             const element = ref2.current;
             gsap.fromTo(
                   element, { x: 12, y: -47, scaleX: 0.7, scaleY: 0.7 }, {
-                  x: -70, y: 90, scaleX: 1, scaleY: 1, duration: 2,
+                  x: -80, y: 70, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
                         end: "bottom 30%",
@@ -44,11 +42,13 @@ function index({ tabList, tabList2 }: any) {
                   }
             });
       }, []);
+      const ref3 = useRef(null);
+
       useEffect(() => {
             const element = ref3.current;
             gsap.fromTo(
                   element, { x: -5, y: -90, scaleX: 0.7, scaleY: 0.7 }, {
-                  x: 0, y: 100, scaleX: 1, scaleY: 1, duration: 2,
+                  x: 0, y: 67, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
                         end: "bottom 30%",
@@ -58,11 +58,13 @@ function index({ tabList, tabList2 }: any) {
                   }
             });
       }, []);
+      const ref4 = useRef(null);
+
       useEffect(() => {
             const element = ref4.current;
             gsap.fromTo(
                   element, { x: -11, y: -46, scaleX: 0.7, scaleY: 0.7 }, {
-                  x: 60, y: 80, scaleX: 1, scaleY: 1, duration: 2,
+                  x: 86, y: 75, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
                         end: "bottom 30%",
@@ -72,11 +74,13 @@ function index({ tabList, tabList2 }: any) {
                   }
             });
       }, []);
+      const ref5 = useRef(null);
+
       useEffect(() => {
             const element = ref5.current;
             gsap.fromTo(
                   element, { x: -5, y: -60, scaleX: 0.7, scaleY: 0.7 }, {
-                  x: 70, y: 40, scaleX: 1, scaleY: 1, duration: 2,
+                  x: 118, y: -5, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
                         end: "bottom 30%",
@@ -179,4 +183,4 @@ function index({ tabList, tabList2 }: any) {
       </>;
 }
 
-export default index;
+export default Index;

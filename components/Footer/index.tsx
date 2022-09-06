@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Footer.module.scss'
 
-function index() {
+function Index() {
       return (
             <div className={`${styles.container}`}>
                   <img src='/assets/images/f1logo.png' alt="" />
@@ -12,4 +12,4 @@ function index() {
       )
 }
 
-export default index
+export default Index
