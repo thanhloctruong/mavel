@@ -12,7 +12,7 @@ function Index({ tabList, tabList2 }: any) {
       useEffect(() => {
             const element = Ref2.current;
             gsap.fromTo(
-                  element, { x: 20, y: -10, scaleX: 0.7, scaleY: 0.7 }, {
+                  element, { x: 20, y: -10, scaleX: 0.5, scaleY: 0.5 }, {
                   x: -54, y: 67, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
@@ -28,7 +28,7 @@ function Index({ tabList, tabList2 }: any) {
       useEffect(() => {
             const element = ref3.current;
             gsap.fromTo(
-                  element, { x: 0, y: -50, scaleX: 0.7, scaleY: 0.7 }, {
+                  element, { x: 0, y: -50, scaleX: 0.5, scaleY: 0.5 }, {
                   x: 0, y: 100, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
@@ -45,7 +45,7 @@ function Index({ tabList, tabList2 }: any) {
       useEffect(() => {
             const element = ref4.current;
             gsap.fromTo(
-                  element, { x: -30, y: -30, scaleX: 0.7, scaleY: 0.7 }, {
+                  element, { x: -30, y: -30, scaleX: 0.5, scaleY: 0.5 }, {
                   x: 28, y: 33, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
@@ -103,7 +103,7 @@ function Index({ tabList, tabList2 }: any) {
                                                                               <Col md={4} key={index}>
                                                                                     <Card className={`${styles.card}`} onClick={() => handlePopup(item.imgUrl, item.src)}
                                                                                     >
-                                                                                          <Card.Img variant="top" src={item.imgUrl} />
+                                                                                          <Card.Img className={`${styles.img}`} variant="top" src={item.imgUrl} />
                                                                                     </Card>
 
                                                                               </Col>
@@ -123,7 +123,7 @@ function Index({ tabList, tabList2 }: any) {
                                                                               <Col md={4} key={index}>
                                                                                     <Card className={`${styles.card}`} onClick={() => handlePopup(item.imgUrl, item.src)}
                                                                                     >
-                                                                                          <Card.Img variant="top" src={item.imgUrl} />
+                                                                                          <Card.Img className={`${styles.img}`} variant="top" src={item.imgUrl} />
                                                                                     </Card>
 
                                                                               </Col>

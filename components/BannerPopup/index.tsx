@@ -4,10 +4,7 @@ import styles from './BannerPopup.module.scss'
 
 function Index() {
       const myref = useRef < any > (null)
-
       const [hide, setHide] = useState < boolean > (false)
-
-
       if (typeof window !== "undefined") {
             const a = myref.current
             window.onclick = (e) => {

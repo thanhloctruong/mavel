@@ -14,7 +14,7 @@ function Index() {
                   scrollTrigger: {
                         trigger: element, start: "top 40%",
                         end: "bottom 40%",
-                        scrub: true,
+                        scrub: 3,
                         toggleActions: 'play  none none reverse',
                   }
             });
@@ -28,7 +28,7 @@ function Index() {
                   scrollTrigger: {
                         trigger: element, start: "top 40%",
                         end: "bottom 40%",
-                        scrub: true,
+                        scrub: 3,
                         toggleActions: 'play  none none reverse',
                   }
 

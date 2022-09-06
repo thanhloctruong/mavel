@@ -15,7 +15,7 @@ function Index({ tabList, tabList2 }: any) {
       useEffect(() => {
             const element = ref1.current;
             gsap.fromTo(
-                  element, { x: 8, y: -52, scaleX: 0.7, scaleY: 0.7 }, {
+                  element, { x: 8, y: -52, scaleX: 0.5, scaleY: 0.5 }, {
                   x: -117, y: 11, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
@@ -31,7 +31,7 @@ function Index({ tabList, tabList2 }: any) {
       useEffect(() => {
             const element = ref2.current;
             gsap.fromTo(
-                  element, { x: 12, y: -47, scaleX: 0.7, scaleY: 0.7 }, {
+                  element, { x: 12, y: -47, scaleX: 0.5, scaleY: 0.5 }, {
                   x: -80, y: 70, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
@@ -47,7 +47,7 @@ function Index({ tabList, tabList2 }: any) {
       useEffect(() => {
             const element = ref3.current;
             gsap.fromTo(
-                  element, { x: -5, y: -90, scaleX: 0.7, scaleY: 0.7 }, {
+                  element, { x: -5, y: -90, scaleX: 0.5, scaleY: 0.5 }, {
                   x: 0, y: 67, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
@@ -63,7 +63,7 @@ function Index({ tabList, tabList2 }: any) {
       useEffect(() => {
             const element = ref4.current;
             gsap.fromTo(
-                  element, { x: -11, y: -46, scaleX: 0.7, scaleY: 0.7 }, {
+                  element, { x: -11, y: -46, scaleX: 0.5, scaleY: 0.5 }, {
                   x: 86, y: 75, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
@@ -79,7 +79,7 @@ function Index({ tabList, tabList2 }: any) {
       useEffect(() => {
             const element = ref5.current;
             gsap.fromTo(
-                  element, { x: -5, y: -60, scaleX: 0.7, scaleY: 0.7 }, {
+                  element, { x: -5, y: -60, scaleX: 0.5, scaleY: 0.5 }, {
                   x: 118, y: -5, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
                         trigger: element, start: "top 80%",
@@ -140,7 +140,7 @@ function Index({ tabList, tabList2 }: any) {
                                                                               <Col md={2} key={index}>
                                                                                     <Card className={`${styles.card}`} onClick={() => handlePopup(item.imgUrl, item.src)}
                                                                                     >
-                                                                                          <Card.Img variant="top" src={item.imgUrl} />
+                                                                                          <Card.Img className={`${styles.img}`} variant="top" src={item.imgUrl} />
                                                                                     </Card>
 
                                                                               </Col>
@@ -160,7 +160,7 @@ function Index({ tabList, tabList2 }: any) {
                                                                               <Col md={2} key={index}>
                                                                                     <Card className={`${styles.card}`} onClick={() => handlePopup(item.imgUrl, item.src)}
                                                                                     >
-                                                                                          <Card.Img variant="top" src={item.imgUrl} />
+                                                                                          <Card.Img className={`${styles.img}`} variant="top" src={item.imgUrl} />
                                                                                     </Card>
 
                                                                               </Col>

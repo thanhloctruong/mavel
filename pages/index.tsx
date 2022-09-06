@@ -28,7 +28,6 @@ const Home = () => {
             </div>
             <div className={`${styles.wrapper}`}>
                   <Banner />
-                  <Image width={1200} height={60} src='/assets/images/border.jpg' />
                   <BannerVideo />
                   <Image width={1200} height={60} src='/assets/images/border.jpg' />
                   <BannerSlide SliderData={SliderData} />

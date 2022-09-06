@@ -4,6 +4,9 @@
       text-align: center;
       background-repeat: no-repeat;
       padding-bottom: 50px;
+      background-size: 100% 100%;
+      margin-top: -10px;
+      margin-bottom: -1px;
 }
 .image_container {
       position: relative;
@@ -11,23 +14,19 @@
 .car {
       position: absolute;
       &_2 {
-            top: 16%;
+            top: 19%;
             left: 30%;
             z-index: 1;
       }
       &_3 {
-            top: 19%;
+            top: 22%;
             left: 40%;
             z-index: 3;
       }
       &_4 {
-            top: 18%;
+            top: 21%;
             right: 30%;
             z-index: 1;
-      }
-      &_5 {
-            top: 17%;
-            right: 21%;
       }
 }
 .title {
@@ -80,6 +79,8 @@
       }
       &_content {
             padding: 15px 30px;
+            width: 60%;
+            margin: auto;
       }
 }
 .text {
@@ -99,10 +100,7 @@
       background-position: center;
 }
 .link {
-      border-top-left-radius: 12px !important;
-      border-top-right-radius: 12px !important;
-      border-bottom-left-radius: 0 !important ;
-      border-bottom-right-radius: 0 !important;
+      border-radius: 0 !important;
 }
 .first {
       border: 3px solid #f9486b;
@@ -112,4 +110,9 @@
 }
 .card {
       background-color: transparent !important;
+      margin-bottom: 0.25rem;
+}
+.img {
+      max-height: 133px;
+      height: 133px;
 }
