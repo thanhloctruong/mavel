@@ -53,12 +53,11 @@ function Index({ SliderData }: any) {
             setPause(true)
       }
       const settings = {
-            className: "center",
             dots: false,
             infinite: true,
             speed: 500,
             slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToScroll: 1,
             nextArrow: <SampleNextArrow />,
             prevArrow: <SamplePrevArrow />
       };
@@ -84,7 +83,7 @@ function Index({ SliderData }: any) {
                               )
                         })
                   }
-                  <div className={`${styles.slide_contents} mt-4`}>
+                  <div className={`${styles.slide_contents} px-5 mt-4`}>
                         <Slider {...settings} >
                               {SliderData &&
                                     SliderData.map((slide, index) => {
