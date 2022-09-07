@@ -25,21 +25,17 @@ function SamplePrevArrow(props: any) {
 
 function Index({ SliderData }: any) {
       const [current, setCurrent] = useState < number > (0)
+      const [video, setVideo] = useState < any > ([0, 0, '/assets/images/videodemo.mp4', 0])
       const [pause, setPause] = useState < Boolean > (true)
       const [play, setPlay] = useState < Boolean > (false)
-      const length = SliderData.length
-      const nextSlide = () => {
-            setCurrent(current === length - 1 ? 0 : current + 1)
-      }
-
-      const prevSlide = () => {
-            setCurrent(current == 0 ? length - 1 : current - 1)
-      }
+      const [dataTime, setDataTime] = useState < any > (0)
       if (!Array.isArray(SliderData) || SliderData.length <= 0) {
             return null
       }
-      console.log(current);
-
+      const ref = useRef(null)
+      const handleLoad = (e: any) => {
+            setDataTime(e.target.currentTime);
+      }
       const handlePlay = () => {
             setPause(false)
             setPlay(false)
@@ -52,6 +48,15 @@ function Index({ SliderData }: any) {
       const handlePause = () => {
             setPause(true)
       }
+      const handleSaveData = (index: any, url: string, time: any) => {
+            const temp = [index, url, time]
+
+            setVideo(() => [1, ...temp])
+      }
+      useEffect(() => {
+            console.log(video);
+      }, [video])
+
       const settings = {
             dots: false,
             infinite: true,
@@ -65,33 +70,25 @@ function Index({ SliderData }: any) {
       return <>
             <div className={`${styles.container}`}>
                   <img src="/assets/images/title3.png" className="mb-4" />
-                  {SliderData &&
-                        SliderData.map((slide, index) => {
-                              return (
-                                    <div className={`${styles.video_container}`} style={{ display: index == current ? "block" : 'none' }} key={index} >
-                                          <span style={{ display: pause ? "block" : "none" }} className={`${styles.img_play}  ${styles.img} `}>
-                                                <Image width={121} height={121} src="/assets/images/play.png" alt="" />
-                                          </span>
-                                          <span style={{ display: play ? "block" : "none" }} className={`${styles.img_pause} ${styles.img} `} >
-                                                <Image width={121} height={121} src="/assets/images/repeat.png" alt="" />
-                                          </span>
-                                          <video className={`${styles.video} video`} controls onPlay={handlePlay} onPause={handlePause} onEnded={handleEnded} poster='/assets/images/bg4.jpg'>
-                                                <source src={slide?.url} type="video/mp4" />
-                                          </video>
-
-                                    </div>
-                              )
-                        })
-                  }
+                  <div className={`${styles.video_container}`}>
+                        <span style={{ display: pause ? "block" : "none" }} className={`${styles.img_play}  ${styles.img} `}>
+                              <Image width={121} height={121} src="/assets/images/play.png" alt="" />
+                        </span>
+                        <span style={{ display: play ? "block" : "none" }} className={`${styles.img_pause} ${styles.img} `} >
+                              <Image width={121} height={121} src="/assets/images/repeat.png" alt="" />
+                        </span>
+                        <video className={`${styles.video} video`} src={(video[2] || '') + ('#t=' + video[3])} onTimeUpdate={handleLoad} autoPlay muted controls onPlay={handlePlay} onPause={handlePause} onEnded={handleEnded} poster='/assets/images/bg4.jpg' ref={ref}>
+                        </video>
+                  </div>
                   <div className={`${styles.slide_contents} px-5 mt-4`}>
                         <Slider {...settings} >
                               {SliderData &&
                                     SliderData.map((slide, index) => {
                                           return (
                                                 <div className={`${styles.slide_container}`} key={index} onClick={() => {
-                                                      setCurrent(index)
+                                                      handleSaveData(index, slide.url, dataTime)
                                                 }}>
-                                                      <img src={slide?.imgUrl} key={index} className={`${styles.slide_item}`} />
+                                                      <img src={slide?.imgUrl} key={index} className={(index == video[1]) ? 'slide_active' : ' ' + `${styles.slide_item} `} />
                                                       <p style={{ color: "#fff" }}>{slide?.description}</p>
                                                 </div>
                                           )

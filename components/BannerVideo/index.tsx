@@ -4,12 +4,12 @@ import Image from 'next/image'
 import styles from './BannerVideo.module.scss'
 
 function Index() {
-      const [pause, setPause] = useState < Boolean > (false)
+      const [pause, setPause] = useState < Boolean > (true)
       const [play, setPlay] = useState < Boolean > (false)
+
       const handlePlay = () => {
             setPause(false)
             setPlay(false)
-
       }
 
       const handleEnded = () => {
@@ -30,7 +30,7 @@ function Index() {
                         <span style={{ display: play ? "block" : "none" }} className={`${styles.img_pause} ${styles.img} `} >
                               <Image width={121} height={121} src="/assets/images/repeat.png" alt="" />
                         </span>
-                        <video className={`${styles.video} video`} poster='/assets/images/bg4.jpg' controls autoPlay playsInline onPlay={handlePlay} onPause={handlePause} onEnded={handleEnded}>
+                        <video className={`${styles.video} video`} poster='/assets/images/bg4.jpg' autoPlay muted controls playsInline onPlay={handlePlay} onPause={handlePause} onEnded={handleEnded}>
                               <source src="/assets/images/videodemo.mp4" type="video/mp4" />
                         </video>
                   </div>

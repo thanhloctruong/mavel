@@ -1,15 +1,22 @@
 import React, { useRef, useEffect, useState } from "react";
 import styles from './BannerColection.module.scss'
 import gsap from "gsap";
+import Slider from "react-slick";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Tab, Col, Row, Nav, Card, Modal } from 'react-bootstrap';
-import ModalColection from '../Modal'
 gsap.registerPlugin(ScrollTrigger);
 
 
 function Index({ tabList, tabList2 }: any) {
-      const [modalShow, setModalShow] = useState < boolean > (false)
       const [tempData, setTempData] = useState < any > ([])
+
+      const [show, setShow] = useState(false);
+
+      const handleClose = () => setShow(false);
+      const handleShow = () => setShow(true);
+
+
+
 
       const ref1 = useRef(null);
       useEffect(() => {
@@ -90,11 +97,42 @@ function Index({ tabList, tabList2 }: any) {
                   }
             });
       }, []);
-      const handlePopup = (imgSrc: string, src: string) => {
+      const handlePopup = (index: number, src: string, list: any) => {
 
-            let temp = [imgSrc, src];
-            setTempData((item: any) => [1, ...temp])
-            return setModalShow(true)
+            let temp = [index, src, list];
+            setTempData({
+                  src: src,
+                  list: list,
+                  index: index
+            })
+            console.log(tempData);
+            handleShow()
+      }
+      const settings = {
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            nextArrow: <SampleNextArrow />,
+            prevArrow: <SamplePrevArrow />
+      };
+
+      function SampleNextArrow(props: any) {
+            const { className, style, onClick } = props;
+            return (
+                  <button className={`${styles.arrow} ${styles.arrow_right}`} onClick={onClick}>
+                        <img src="/assets/images/arrow_red.png" alt="" className={`${styles.arrow_right_img}`} />
+                  </button>
+            );
+      }
+
+      function SamplePrevArrow(props: any) {
+            const { className, style, onClick } = props;
+            return (
+                  <button className={`${styles.arrow} ${styles.arrow_right}`} onClick={onClick}>
+                        <img src="/assets/images/arrow_red.png" alt="" />
+                  </button>
+            );
       }
       return <>
             <div className={`${styles.container}`}>
@@ -138,7 +176,7 @@ function Index({ tabList, tabList2 }: any) {
                                                                   tabList && tabList.map((item: any, index: number) => {
                                                                         return (
                                                                               <Col md={2} key={index}>
-                                                                                    <Card className={`${styles.card}`} onClick={() => handlePopup(item.imgUrl, item.src)}
+                                                                                    <Card className={`${styles.card}`} onClick={() => handlePopup(index, item.src, tabList)}
                                                                                     >
                                                                                           <Card.Img className={`${styles.img}`} variant="top" src={item.imgUrl} />
                                                                                     </Card>
@@ -158,7 +196,7 @@ function Index({ tabList, tabList2 }: any) {
                                                                   tabList2 && tabList2.map((item: any, index: number) => {
                                                                         return (
                                                                               <Col md={2} key={index}>
-                                                                                    <Card className={`${styles.card}`} onClick={() => handlePopup(item.imgUrl, item.src)}
+                                                                                    <Card className={`${styles.card}`} onClick={() => handlePopup(index, item.src, tabList2)}
                                                                                     >
                                                                                           <Card.Img className={`${styles.img}`} variant="top" src={item.imgUrl} />
                                                                                     </Card>
@@ -177,9 +215,30 @@ function Index({ tabList, tabList2 }: any) {
                   </div>
 
             </div>
-            {
-                  modalShow === true ? <ModalColection img={tempData[1]} src={tempData[2]} onHide={() => setModalShow(false)} /> : ''
-            }
+
+            <Modal
+                  show={show}
+                  onHide={handleClose}
+                  centered
+                  size="xl"
+            >
+                  <Modal.Header closeButton>
+
+                  </Modal.Header>
+                  <div >
+                        <Slider {...settings} initialSlide={tempData.index}>
+                              {tempData.list &&
+                                    tempData.list.map((item: any, index: number) => {
+                                          return (
+                                                <div key={index}>
+                                                      <img src={item.imgUrl} alt="" style={{ margin: 'auto' }} />
+                                                </div>
+                                          )
+                                    })
+                              }
+                        </Slider>
+                  </div>
+            </Modal>
       </>;
 }
 

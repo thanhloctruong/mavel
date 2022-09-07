@@ -122,3 +122,27 @@
       max-height: 133px;
       height: 133px;
 }
+.arrow {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      animation: scale 1s infinite;
+      cursor: pointer;
+      &_right {
+            &_img {
+                  transform: rotate(180deg);
+            }
+      }
+}
+@keyframes scale {
+      0%,
+      100% {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+      }
+
+      50% {
+            transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+      }
+}

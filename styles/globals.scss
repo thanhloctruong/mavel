@@ -35,3 +35,12 @@ a {
 .slick-slider {
       display: flex !important;
 }
+.slide_active {
+      border: 1px solid red;
+      margin: auto;
+}
+.modal-content,
+.modal-header {
+      background: transparent !important;
+      border: none !important;
+}

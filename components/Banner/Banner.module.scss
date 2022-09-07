@@ -31,8 +31,8 @@
 }
 .green_car {
       position: relative;
-      right: -136px;
-      bottom: -83px;
+      right: -114px;
+      bottom: -15px;
       animation: engineGreen 0.3s infinite;
 }
 .footer {
@@ -86,10 +86,10 @@
       0%,
       50%,
       100% {
-            bottom: -134px;
+            bottom: -14px;
       }
       25%,
       75% {
-            bottom: -136px;
+            bottom: -16px;
       }
 }
