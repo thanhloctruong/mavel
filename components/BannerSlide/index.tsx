@@ -29,10 +29,6 @@ function Index({ SliderData }: any) {
       const [pause, setPause] = useState < Boolean > (true)
       const [play, setPlay] = useState < Boolean > (false)
       const [dataTime, setDataTime] = useState < any > (0)
-      if (!Array.isArray(SliderData) || SliderData.length <= 0) {
-            return null
-      }
-      const ref = useRef(null)
       const handleLoad = (e: any) => {
             setDataTime(e.target.currentTime);
       }
@@ -53,10 +49,6 @@ function Index({ SliderData }: any) {
 
             setVideo(() => [1, ...temp])
       }
-      useEffect(() => {
-            console.log(video);
-      }, [video])
-
       const settings = {
             dots: false,
             infinite: true,
@@ -66,7 +58,9 @@ function Index({ SliderData }: any) {
             nextArrow: <SampleNextArrow />,
             prevArrow: <SamplePrevArrow />
       };
-
+      if (!Array.isArray(SliderData) || SliderData.length <= 0) {
+            return null
+      }
       return <>
             <div className={`${styles.container}`}>
                   <img src="/assets/images/title3.png" className="mb-4" />
@@ -77,7 +71,7 @@ function Index({ SliderData }: any) {
                         <span style={{ display: play ? "block" : "none" }} className={`${styles.img_pause} ${styles.img} `} >
                               <Image width={121} height={121} src="/assets/images/repeat.png" alt="" />
                         </span>
-                        <video className={`${styles.video} video`} src={(video[2] || '') + ('#t=' + video[3])} onTimeUpdate={handleLoad} autoPlay muted controls onPlay={handlePlay} onPause={handlePause} onEnded={handleEnded} poster='/assets/images/bg4.jpg' ref={ref}>
+                        <video className={`${styles.video} video`} src={(video[2] || '') + ('#t=' + video[3])} onTimeUpdate={handleLoad} autoPlay muted controls onPlay={handlePlay} onPause={handlePause} onEnded={handleEnded} poster='/assets/images/bg4.jpg'>
                         </video>
                   </div>
                   <div className={`${styles.slide_contents} px-5 mt-4`}>
