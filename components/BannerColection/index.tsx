@@ -231,7 +231,7 @@ function Index({ tabList, tabList2 }: any) {
                                     tempData.list.map((item: any, index: number) => {
                                           return (
                                                 <div key={index}>
-                                                      <img src={item.imgUrl} alt="" style={{ margin: 'auto' }} />
+                                                      <img src={item.src} alt="" style={{ margin: 'auto' }} />
                                                 </div>
                                           )
                                     })

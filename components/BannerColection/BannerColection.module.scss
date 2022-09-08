@@ -12,27 +12,27 @@
 .car {
       position: absolute;
       &_1 {
-            top: 15%;
-            left: 20%;
+            top: 14%;
+            left: 24%;
       }
       &_2 {
-            top: 16%;
-            left: 27%;
+            top: 15%;
+            left: 30%;
             z-index: 1;
       }
       &_3 {
-            top: 19%;
+            top: 17%;
             left: 40%;
             z-index: 3;
       }
       &_4 {
-            top: 16%;
-            right: 27%;
+            top: 15%;
+            right: 29%;
             z-index: 1;
       }
       &_5 {
-            top: 16%;
-            right: 24%;
+            top: 15%;
+            right: 26%;
       }
 }
 .title {
