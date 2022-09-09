@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import styles from './BannerColection.module.scss'
+import Image from 'next/image'
 import gsap from "gsap";
 import Slider from "react-slick";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -8,17 +9,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 function Index({ tabList, tabList2 }: any) {
-      const [tempData, setTempData] = useState < any > ([])
-
+      const [tempData, setTempData] = useState < any > ('')
       const [show, setShow] = useState(false);
 
-      const handleClose = () => setShow(false);
-      const handleShow = () => setShow(true);
-
-
-
-
       const ref1 = useRef(null);
+      const ref2 = useRef(null);
+      const ref3 = useRef(null);
+      const ref4 = useRef(null);
+      const ref5 = useRef(null);
       useEffect(() => {
             const element = ref1.current;
             gsap.fromTo(
@@ -32,64 +30,48 @@ function Index({ tabList, tabList2 }: any) {
 
                   }
             });
-      }, []);
-      const ref2 = useRef(null);
-
-      useEffect(() => {
-            const element = ref2.current;
+            const element_two = ref2.current;
             gsap.fromTo(
-                  element, { x: 12, y: -47, scaleX: 0.5, scaleY: 0.5 }, {
+                  element_two, { x: 12, y: -47, scaleX: 0.5, scaleY: 0.5 }, {
                   x: -80, y: 70, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
-                        trigger: element, start: "top 80%",
+                        trigger: element_two, start: "top 80%",
                         end: "bottom 30%",
                         scrub: true,
                         toggleActions: 'play  none none reverse',
 
                   }
             });
-      }, []);
-      const ref3 = useRef(null);
-
-      useEffect(() => {
-            const element = ref3.current;
+            const element_three = ref3.current;
             gsap.fromTo(
-                  element, { x: -5, y: -90, scaleX: 0.5, scaleY: 0.5 }, {
+                  element_three, { x: -5, y: -90, scaleX: 0.5, scaleY: 0.5 }, {
                   x: 0, y: 67, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
-                        trigger: element, start: "top 80%",
+                        trigger: element_three, start: "top 80%",
                         end: "bottom 30%",
                         scrub: true,
                         toggleActions: 'play  none none reverse',
 
                   }
             });
-      }, []);
-      const ref4 = useRef(null);
-
-      useEffect(() => {
-            const element = ref4.current;
+            const element_four = ref4.current;
             gsap.fromTo(
-                  element, { x: -11, y: -46, scaleX: 0.5, scaleY: 0.5 }, {
+                  element_four, { x: -11, y: -46, scaleX: 0.5, scaleY: 0.5 }, {
                   x: 86, y: 75, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
-                        trigger: element, start: "top 80%",
+                        trigger: element_four, start: "top 80%",
                         end: "bottom 30%",
                         scrub: true,
                         toggleActions: 'play  none none reverse',
 
                   }
             });
-      }, []);
-      const ref5 = useRef(null);
-
-      useEffect(() => {
-            const element = ref5.current;
+            const element_five = ref5.current;
             gsap.fromTo(
-                  element, { x: -5, y: -60, scaleX: 0.5, scaleY: 0.5 }, {
+                  element_five, { x: -5, y: -60, scaleX: 0.5, scaleY: 0.5 }, {
                   x: 118, y: -5, scaleX: 1, scaleY: 1, duration: 2,
                   scrollTrigger: {
-                        trigger: element, start: "top 80%",
+                        trigger: element_five, start: "top 80%",
                         end: "bottom 30%",
                         scrub: true,
                         toggleActions: 'play  none none reverse',
@@ -97,8 +79,8 @@ function Index({ tabList, tabList2 }: any) {
                   }
             });
       }, []);
+      const handleClose = () => setShow(false);
       const handlePopup = (index: number, src: string, list: any) => {
-
             let temp = [index, src, list];
             setTempData({
                   src: src,
@@ -106,8 +88,15 @@ function Index({ tabList, tabList2 }: any) {
                   index: index
             })
             console.log(tempData);
-            handleShow()
       }
+      useEffect(() => {
+            if (tempData) {
+                  console.log(tempData);
+                  // handleShow()
+                  setShow(true);
+
+            }
+      }, [tempData])
       const settings = {
             infinite: true,
             speed: 500,
@@ -215,30 +204,30 @@ function Index({ tabList, tabList2 }: any) {
                   </div>
 
             </div>
+            {tempData &&
+                  <Modal
+                        show={show}
+                        onHide={handleClose}
+                        centered
+                        size="xl"
+                  >
+                        <Modal.Header closeButton>
+                        </Modal.Header>
 
-            <Modal
-                  show={show}
-                  onHide={handleClose}
-                  centered
-                  size="xl"
-            >
-                  <Modal.Header closeButton>
-
-                  </Modal.Header>
-                  <div >
-                        <Slider {...settings} initialSlide={tempData.index}>
-                              {tempData.list &&
+                        {tempData ? <Slider {...settings} initialSlide={tempData.index} onInit={() => { console.log('e'); }}>
+                              {tempData && tempData.list &&
                                     tempData.list.map((item: any, index: number) => {
                                           return (
                                                 <div key={index}>
-                                                      <img src={item.src} alt="" style={{ margin: 'auto' }} />
+                                                      {/* <h1>{item.src}</h1> */}
+                                                      <img src={item.src} alt="" className={`${styles.images}`} />
                                                 </div>
                                           )
                                     })
                               }
-                        </Slider>
-                  </div>
-            </Modal>
+                        </Slider> : ""}
+
+                  </Modal>}
       </>;
 }
 

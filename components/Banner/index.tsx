@@ -9,6 +9,7 @@ function Index() {
       const rLogo = useRef(null);
       const rTitle = useRef(null);
       const rShadow = useRef(null);
+      const imgRef = useRef(null);
       useEffect(() => {
             const element = ref.current;
             const rcar = imgRef.current;
@@ -23,8 +24,6 @@ function Index() {
             timeline.fromTo(rSha, { opacity: 0 }, { opacity: 1 })
 
       }, [])
-
-
       useEffect(() => {
             const element = ref.current;
             gsap.fromTo(
@@ -37,16 +36,13 @@ function Index() {
                         toggleActions: 'play  none none reverse',
                   }
             });
-      }, []);
-      const imgRef = useRef(null);
-      useEffect(() => {
-            const element = imgRef.current;
+            const element_two = imgRef.current;
             gsap.fromTo(
-                  element, { x: 0, y: 0 }, {
+                  element_two, { x: 0, y: 0 }, {
                   x: -100, y: 60, duration: 2,
                   scrollTrigger: {
-                        trigger: element, start: "top 40%",
-                        end: "bottom 40%",
+                        trigger: element_two, start: "top 34%",
+                        end: "bottom 19.5%",
                         scrub: 3,
                         toggleActions: 'play  none none reverse',
                   }

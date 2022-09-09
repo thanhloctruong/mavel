@@ -11,10 +11,11 @@ const Colection = React.lazy(() => import('../components/TabColection'))
 const BannerLast = React.lazy(() => import('../components/BannerLast'))
 const Footer = React.lazy(() => import('../components/Footer'))
 import { SliderData } from '../utils/SliderData'
-import { TabItems, TabItemsTwo, TwoCollect } from '../utils/TabItems'
+import Loading from '../components/Loading'
 
+import { TabItems, TabItemsTwo, TwoCollect } from '../utils/TabItems'
 const Home = () => {
-      return (<Suspense fallback={'Loading...'}>
+      return (<Suspense fallback={<Loading />}>
             <div className={`${styles.header}`}>
                   <div className={`${styles.header_logo}`}>
                         <Image

@@ -44,3 +44,14 @@ a {
       background: transparent !important;
       border: none !important;
 }
+// .slick-active {
+//       width: 100% !important;
+// }
+.slick-active > div {
+      &:focus-visible {
+            outline: none;
+      }
+}
+*:focus-visible {
+      outline: none !important;
+}
